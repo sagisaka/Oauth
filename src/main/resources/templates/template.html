@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--引数の title, links は fragment expressions */-->
+<head th:fragment="base_header(links)">
+<!--/* 必ず読み込むファイル */-->
+<link href="css/style.css" th:href="@{css/style.css}" rel="stylesheet"></link>
+</head>
+<footer th:fragment="footer">
+	<hr></hr>
+	<p>Copyright 2017 Oauth api</p>
+</footer>
+</html>

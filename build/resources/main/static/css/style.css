@@ -1,0 +1,30 @@
+body {
+	background-color: #DDDDDD; /*�y�[�W�S�̂̔w�i�F*/
+}
+
+li#menu01, li#menu02 {
+	float: left; /*���X�g���ڂ����ɕ��ׂ�*/
+	display: inline; /*���X�g���ڂ��C�����C���\���ɂ���*/
+	list-style-type: none; /*���X�g�}�[�J�[�����ɂ���*/
+}
+
+li#menu01 {
+	width: 164px;
+	height: 42px;
+	background: #cde4ff;
+}
+
+li#menu02 {
+	width: 164px;
+	height: 42px;
+	background: #CCFF33;
+}
+
+ul#menu a {
+	display: block; /*�����N���u���b�N�\���ɂ���*/
+	height: 40px;
+	padding-top: 4px;
+	text-align: center;
+	text-decoration: none; /*�����N�̉����𖳂���*/
+	font-family: Arial, Helvetica, sans-serif; /*�t�H���g�̎���*/
+}
