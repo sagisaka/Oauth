@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.spring.app.Oauth.Controller.rest.OauthRestController;
-
 
 @Controller
 public class OauthController {
@@ -23,8 +21,6 @@ public class OauthController {
 	private Twitter twitter;
 
 	private ConnectionRepository connectionRepository;
-
-	private OauthRestController oauthrestcontroller;
 
 	@Inject
 	public OauthController(Twitter twitter, ConnectionRepository connectionRepository) {
@@ -36,7 +32,6 @@ public class OauthController {
 	public String login(Model model) {
 		return "redirect:/connect/twitter";
 	}
-
 
 	@GetMapping("/")
 	public String hello(Model model) {
@@ -52,11 +47,8 @@ public class OauthController {
 		return "main";
 	}
 	@GetMapping("/logout")
-	public String logout(Model model) {
-		if (connectionRepository.findPrimaryConnection(Twitter.class) != null) {
-			model.addAttribute(twitter.userOperations().getUserProfile());
-			return "/not_logout";
-		}
+	public String logout() {
+		connectionRepository.removeConnections("twitter");
 		return "logout";
 	}
 }
